@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>VR Models</title>
+    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <img id="country" src="assets/country.jpg" />
+        <img id="palma" src="assets/palma.jpg" />
+        <img id="tronco" src="assets/tronco.jpg" />
+        <audio id="click-sound" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
+      </a-assets>
+
+      <a-plane position="-1.5 1.2 -4" color="#292929" width="1" height="1" sound="on: click; src: #click-sound" onclick="show('country')"
+               event-set__1="_event: mousedown; scale: 1 1 1"
+               event-set__2="_event: mouseup; scale: 1.2 1.2 1.2"
+               event-set__3="_event: mouseenter; scale: 1.2 1.2 1.2"
+               event-set__4="_event: mouseleave; scale: 1 1 1"
+      >
+        <a-entity align="center" anchor="center" scale="3 3 3" text="value:El Country; color:#FFFFFF; shader: msdf; font:https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/roboto/Roboto-Bold.json;" position="1.06 0.241 0"></a-entity>
+        <a-entity align="center" anchor="center" scale="1.8 1.8 1.8" text="value:////////////////; color:#FFFFFF; shader: msdf; font:https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/roboto/Roboto-Bold.json;" position="0.454 -0.006 0"></a-entity>
+        <a-entity align="center" anchor="center" scale="2.3 2.3 2.3" text="value:1.3km; color:#FFFFFF; shader: msdf; font:https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/roboto/Roboto-Bold.json;" position="0.698 -0.296 0"></a-entity>
+      </a-plane>
+
+      <a-plane position="0 1.2 -4" color="#292929" width="1" height="1" sound="on: click; src: #click-sound" onclick="show('palma')"
+              event-set__1="_event: mousedown; scale: 1 1 1"
+              event-set__2="_event: mouseup; scale: 1.2 1.2 1.2"
+              event-set__3="_event: mouseenter; scale: 1.2 1.2 1.2"
+              event-set__4="_event: mouseleave; scale: 1 1 1"
+      >
+        <a-entity align="center" anchor="center" scale="3 3 3" text="value:La Palma; color:#FFFFFF; shader: msdf; font:https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/roboto/Roboto-Bold.json;" position="1.06 0.241 0"></a-entity>
+        <a-entity align="center" anchor="center" scale="1.8 1.8 1.8" text="value:////////////////; color:#FFFFFF; shader: msdf; font:https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/roboto/Roboto-Bold.json;" position="0.454 -0.006 0"></a-entity>
+        <a-entity align="center" anchor="center" scale="2.3 2.3 2.3" text="value:1.6km; color:#FFFFFF; shader: msdf; font:https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/roboto/Roboto-Bold.json;" position="0.698 -0.296 0"></a-entity>
+      </a-plane>
+
+      <a-plane position="1.5 1.2 -4" color="#292929" width="1" height="1" sound="on: click; src: #click-sound" onclick="show('tronco')"
+              event-set__1="_event: mousedown; scale: 1 1 1"
+              event-set__2="_event: mouseup; scale: 1.2 1.2 1.2"
+              event-set__3="_event: mouseenter; scale: 1.2 1.2 1.2"
+              event-set__4="_event: mouseleave; scale: 1 1 1"
+      >
+        <a-entity align="center" anchor="center" scale="3 3 3" text="value:El Tronco; color:#FFFFFF; shader: msdf; font:https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/roboto/Roboto-Bold.json;" position="1.06 0.241 0"></a-entity>
+        <a-entity align="center" anchor="center" scale="1.8 1.8 1.8" text="value:////////////////; color:#FFFFFF; shader: msdf; font:https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/roboto/Roboto-Bold.json;" position="0.454 -0.006 0"></a-entity>
+        <a-entity align="center" anchor="center" scale="2.3 2.3 2.3" text="value:2.1km; color:#FFFFFF; shader: msdf; font:https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/roboto/Roboto-Bold.json;" position="0.698 -0.296 0"></a-entity>
+      </a-plane>
+
+      <a-sky id="sky" src="#country" radius="10"></a-sky>
+
+      <a-entity camera look-controls>
+        <a-cursor fuse="true">
+        </a-cursor>
+      </a-entity>
+
+    </a-scene>
+
+    <script type="text/javascript">
+      function show(id) {
+        document.getElementById('sky').setAttribute('src', '#' + id)
+      }
+    </script>
+  </body>
+</html>
